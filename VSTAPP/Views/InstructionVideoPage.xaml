@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="VSTAPP.Views.InstructionVideoPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" Background="#FF2E86AB">
+            <TextBlock Text="సూచనల వీడియో - General Instructions" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Foreground="White" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"/>
+        </Grid>
+
+        <!-- Video Player -->
+        <Grid Grid.Row="1">
+            <MediaElement x:Name="InstructionPlayer" 
+                          LoadedBehavior="Manual" 
+                          UnloadedBehavior="Manual"
+                          Stretch="Uniform"
+                          MediaEnded="InstructionPlayer_MediaEnded"/>
+
+            <!-- Loading Message -->
+            <TextBlock x:Name="LoadingText" 
+                       Text="Loading instruction video..." 
+                       FontSize="24" 
+                       Foreground="White" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"
+                       Background="#AA000000"
+                       Padding="20"/>
+        </Grid>
+
+        <!-- Controls -->
+        <Grid Grid.Row="2" Background="#FFE8E8E8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="BackButton" 
+                    Grid.Column="0"
+                    Content="◀ Back" 
+                    FontSize="18" 
+                    Margin="20,10" 
+                    Height="50"
+                    Click="BackButton_Click"/>
+
+            <TextBlock Grid.Column="1" 
+                       Text="సూచనలను జాగ్రత్తగా చూడండి మరియు వినండి"
+                       FontSize="16"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="#FF2E86AB"
+                       TextWrapping="Wrap"/>
+
+            <Button x:Name="SkipButton" 
+                    Grid.Column="2"
+                    Content="Skip to SOP ▶" 
+                    FontSize="18" 
+                    Margin="20,10" 
+                    Height="50"
+                    Click="SkipButton_Click"/>
+        </Grid>
+    </Grid>
+</UserControl>

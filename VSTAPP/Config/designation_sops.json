@@ -1,0 +1,53 @@
+{
+  "Designations": {
+    "Engineer": [ "SOP1", "SOP2", "Manager" ],
+    "Operator": [ "Loader Operator", "Drill Operator", "Crusher Operator" ],
+    "Safety": [ "Safety Officer", "First Aid Responder" ]
+  },
+  "SOPs": [
+    {
+      "name": "SOP1",
+      "path": "C:/SOP/Drilling.mp4"
+    },
+    {
+      "name": "SOP2",
+      "path": "C:/SOP/Equipment.mp4"
+    },
+    {
+      "name": "Manager",
+      "path": "C:/SOP/Management.mp4"
+    },
+    {
+      "name": "Loader Operator",
+      "path": "C:/SOP/LoaderOperation.mp4"
+    },
+    {
+      "name": "Drill Operator",
+      "path": "C:/SOP/DrillOperation.mp4"
+    },
+    {
+      "name": "Crusher Operator",
+      "path": "C:/SOP/CrusherOperation.mp4"
+    },
+    {
+      "name": "Safety Officer",
+      "path": "C:/SOP/SafetyInspection.mp4"
+    },
+    {
+      "name": "First Aid Responder",
+      "path": "C:/SOP/FirstAid.mp4"
+    },
+    {
+      "name": "Blasting SOP",
+      "path": "C:/SOP/Blasting.mp4"
+    },
+    {
+      "name": "Maintenance SOP",
+      "path": "C:/SOP/Maintenance.mp4"
+    },
+    {
+      "name": "Safety SOP",
+      "path": "C:/SOP/Safety.mp4"
+    }
+  ]
+}
