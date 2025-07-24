@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="VSTAPP.Views.SOPWebcamPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" Background="#FF2E86AB">
+            <TextBlock x:Name="SOPTitle" 
+                       Text="SOP Training with Live Recording" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Foreground="White" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"/>
+        </Grid>
+
+        <!-- Main Content Area -->
+        <Grid Grid.Row="1">
+            <!-- SOP Video (Main) -->
+            <MediaElement x:Name="SOPPlayer" 
+                          LoadedBehavior="Manual" 
+                          UnloadedBehavior="Manual"
+                          Stretch="Uniform"
+                          MediaEnded="SOPPlayer_MediaEnded"/>
+
+            <!-- Webcam Feed (Picture-in-Picture) -->
+            <Border x:Name="WebcamContainer"
+                    Width="300" 
+                    Height="200" 
+                    BorderBrush="Red" 
+                    BorderThickness="3"
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Top" 
+                    Margin="20">
+
+                <Grid Background="DarkGray">
+                    <!-- Placeholder for webcam feed -->
+                    <TextBlock x:Name="WebcamStatus"
+                               Text="🔴 RECORDING\nWebcam Feed" 
+                               FontSize="16" 
+                               Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               TextAlignment="Center"/>
+
+                    <!-- This is where you'll add actual webcam control -->
+                    <!-- <MediaElement x:Name="WebcamPlayer" ... /> -->
+                </Grid>
+            </Border>
+
+            <!-- Loading Message -->
+            <TextBlock x:Name="LoadingText" 
+                       Text="Loading SOP video..." 
+                       FontSize="24" 
+                       Foreground="White" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"
+                       Background="#AA000000"
+                       Padding="20"/>
+        </Grid>
+
+        <!-- Controls -->
+        <Grid Grid.Row="2" Background="#FFE8E8E8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="BackButton" 
+                    Grid.Column="0"
+                    Content="◀ Back" 
+                    FontSize="18" 
+                    Margin="20,10" 
+                    Height="50"
+                    Click="BackButton_Click"/>
+
+            <TextBlock Grid.Column="1" 
+                       x:Name="StatusText"
+                       Text="🔴 Recording in progress..."
+                       FontSize="16"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Foreground="Red"
+                       TextWrapping="Wrap"/>
+
+            <Button x:Name="CompleteButton" 
+                    Grid.Column="2"
+                    Content="Complete Training" 
+                    FontSize="18" 
+                    Margin="20,10" 
+                    Height="50"
+                    Click="CompleteButton_Click"/>
+        </Grid>
+    </Grid>
+</UserControl>
